@@ -1,0 +1,33 @@
+@mixin vertCenter {
+    display:flex;
+    align-items:center;
+}
+
+.app{
+    &__collection{
+        & .collection{
+            &__item{
+                @include vertCenter();
+                flex-direction:column;
+            }
+        }
+    }
+    &__image{
+        @include vertCenter();
+        flex-direction:column;
+        & > img{
+            margin:auto;
+            width:50%;
+        }
+        & > p > img{
+            border-radius: 50%;
+        }
+    } 
+}
+
+.slick-track{
+    @include vertCenter();
+}
+.slick-slide:focus{
+    outline:none;
+}
